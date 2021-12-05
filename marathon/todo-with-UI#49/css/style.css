@@ -96,7 +96,7 @@ align-items: center;
   height: 20px;
   width: 20px;
 
-  background: url(/img/add-icon.svg) no-repeat;
+  background: url(../img/add-icon.svg) no-repeat;
 }
 
 .task_container {
@@ -151,6 +151,6 @@ align-items: center;
   top: 13px;
   height: 20px;
   width: 20px;
-  background: url(/img/close-icon.svg) no-repeat;
+  background: url(../img/close-icon.svg) no-repeat;
   /* z-index: 5; */
 }
