@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header_text">To-Do List & Tasks </h1>
+    </header>
+    <main class="main">
+        <div class="container">
+            <section class="priority" id="high" data-priority="high">
+                <h2 class="heading_text">HIGH</h2>
+                <form action="" class="form-input">
+                    <input type="text" class="input_task" id="high" placeholder="Добавить важных дел">
+                    <input type="submit" value="" class="button_plus" data-operation="plus">
+                </form>
+
+                <div class="task_container"></div>
+            </section>
+            <section class="priority" id="low" data-priority="low">
+                <h2 class="heading_text">LOW</h2>
+                <form action="" id="form-input" class="form-input">
+                    <input type="text" class="input_task" id="low" placeholder="Добавить неважных дел">
+                    <input type="submit" value="" class="button_plus" data-operation="plus">
+                </form>
+
+                <div class="task_container"></div>
+
+            </section>
+        </div>
+    </main>
+
+    <script type='module' src="js/view.js"></script>
+</body>
+
+</html>
