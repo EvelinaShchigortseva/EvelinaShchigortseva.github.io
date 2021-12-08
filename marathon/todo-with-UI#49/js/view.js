@@ -1,58 +1,69 @@
 import {
-  list,
   addTask,
   deleteTask,
   changeTask,
+  changeNameTask, list,
 } from "./main.js";
 
 const UI_ELEMENTS = {
-    forms: document.querySelectorAll(".form-input"),
-    task_containers: document.querySelectorAll(".task_container"),
+  forms: document.querySelectorAll(".form-input"),
+  task_containers: document.querySelectorAll(".task_container"),
 }
 
 UI_ELEMENTS.forms.forEach(function (form) {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    
-    let task_name = event.target.firstElementChild.value.trim();
-    if(task_name){
-        let task_status = "To Do";
-        let task_priority = event.target.parentElement.id;
 
-    let task_Element = addTask(task_name, task_status, task_priority);
+    const task_name = event.target.firstElementChild.value.trim();
+    try{
 
-    form.reset();
+      if(!task_name){
+        throw new SyntaxError("Данные некорректны");
+      }
 
-    if (task_priority == "high") {
-      createBlockTask(task_Element.id, task_Element.name, UI_ELEMENTS.task_containers[0]);
+      const task_status = "To Do";
+      const task_priority = event.target.parentElement.id;
+
+      const task_Element = addTask(task_name, task_status, task_priority);
+
+      form.reset();
+
+      if (task_priority === "high") {
+        createBlockTask(task_Element.id, task_Element.name, UI_ELEMENTS.task_containers[0]);
+      }
+
+      if (task_priority === "low") {
+        createBlockTask(task_Element.id, task_Element.name, UI_ELEMENTS.task_containers[1]);
+      }
+      console.log(list)
     }
-
-    if (task_priority == "low") {
-      createBlockTask(task_Element.id, task_Element.name, UI_ELEMENTS.task_containers[1]);
+    catch(e){
+      alert("Недопустимо введение пустых полей")
     }
-
-}
-  }); 
+  });
 });
 
 function createBlockTask(id_task, task_name, task_container) {
-  let shellTask = document.createElement("div");
+  const shellTask = document.createElement("div");
   shellTask.classList.add("task");
 
-  let task_text = document.createElement("span");
-  task_text.classList.add("task_text");
-  task_text.textContent = task_name;
-  task_text.setAttribute("id", id_task);
+  const task = document.createElement("input");
+  task.classList.add("task_text");
+  task.value = task_name;
+  task.setAttribute("id", id_task);
+  task.setAttribute('readonly', 'readonly')
+  task.addEventListener('dblclick', function (event){
+    changeNameTaskElement(event)
+  })
 
-
-  let checkboxForTask = document.createElement("input");
+  const checkboxForTask = document.createElement("input");
   checkboxForTask.classList.add("checkbox");
   checkboxForTask.setAttribute("type", "checkbox");
   checkboxForTask.addEventListener("click", function (event) {
     changeStatusElement(event);
   });
 
-  let buttonDeleteTask = document.createElement("input");
+  const buttonDeleteTask = document.createElement("input");
   buttonDeleteTask.classList.add("button_x");
   buttonDeleteTask.setAttribute("type", "button");
   buttonDeleteTask.setAttribute("value", "");
@@ -60,34 +71,54 @@ function createBlockTask(id_task, task_name, task_container) {
     deleteTaskElement(event);
   });
 
-  shellTask.prepend(task_text, checkboxForTask, buttonDeleteTask);
+  shellTask.prepend(task, checkboxForTask, buttonDeleteTask);
 
   task_container.append(shellTask);
 }
 
 function deleteTaskElement(event) {
-  let id_task = +event.target.previousElementSibling.previousElementSibling.id;
+  const task = event.target.previousElementSibling.previousElementSibling;
 
-  deleteTask(id_task);
+  deleteTask(task.id);
   event.target.parentElement.remove();
-  
+
 }
 
 function changeStatusElement(event) {
-  let id_task = +event.target.previousElementSibling.id;
+  const task = event.target.previousElementSibling
+  const task_container = event.target.parentElement.parentElement;
+  const taskElement = event.target.parentElement;
+
   let task_status;
-  let container_task = event.target.parentElement.parentElement;
-  let taskElement = event.target.parentElement;
+
 
   if (event.target.checked) {
-    event.target.previousElementSibling.style.background = "#F4F4F4";
+    task.style.background = "#F4F4F4";
     task_status = "Done";
-    container_task.append(taskElement)
+    task_container.append(taskElement)
   } else {
-    event.target.previousElementSibling.style.background = "";
+    task.style.background = "";
     task_status = "To Do";
-    container_task.prepend(taskElement)
+    task_container.prepend(taskElement)
   }
 
-  changeTask(id_task, task_status);
+  changeTask(task.id, task_status);
+}
+
+function changeNameTaskElement(event){
+
+    let task = event.target
+    task.style.background = "#93A8F0"
+    task.removeAttribute('readonly','readonly');
+    task.setAttribute('type', 'text')
+    task.addEventListener('keydown', function (event){
+
+      let newName =""
+      if(event.key == "Enter") {
+        newName += task.value
+        task.setAttribute('readonly', 'readonly')
+        task.style.background = ""
+      }
+      changeNameTask(task.id, newName)
+    })
 }

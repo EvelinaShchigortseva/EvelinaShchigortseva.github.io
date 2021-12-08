@@ -16,9 +16,12 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 /*--------------------*/
 
-
+body{
+  background: rgb(122,117,204);
+  background: linear-gradient(18deg, rgba(122,117,204,1) 0%, rgba(168,96,168,1) 1%, rgba(166,92,173,1) 24%, rgba(94,153,209,1) 60%, rgba(41,63,159,1) 100%);
+}
 .header {
-  background-color: rgb(63, 81, 158);
+  /*background-color: rgb(63, 81, 158);*/
   height: 50px;
 }
 .header_text {
@@ -54,7 +57,7 @@ align-items: center;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 .input_task {

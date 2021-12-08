@@ -20,7 +20,7 @@ function resultConsole(isExist, type) {
       case "status":
         console.log("Не существует такого статуса");
         break;
-      case "prioryty":
+      case "priority":
         console.log("Не существует такого приоритета");
         break;
     }
@@ -50,6 +50,14 @@ function changeTask(id, status, priority) {
   }
   resultConsole(isExistTask, "id");
   resultConsole(isExistStatus, "status");
+}
+
+function  changeNameTask(id, name){
+  let isExistTask = isTaskExist(id);
+  if(isExistTask){
+    let task = list.find((item) => item.id == id);
+    task.name = name;
+  }
 }
 
 function deleteTask(id) {
@@ -93,7 +101,7 @@ function showList(sortBy) {
   }
 }
 
-export { list, statuses, priorities, id, addTask, deleteTask, changeTask };
+export { list, statuses, priorities, id, addTask, deleteTask, changeTask, changeNameTask };
 
 // addTask("задача 1");
 // addTask("задача 2");
@@ -107,3 +115,8 @@ export { list, statuses, priorities, id, addTask, deleteTask, changeTask };
 // showList("status");
 
 // console.log(list);
+
+
+
+
+console.log(list)
