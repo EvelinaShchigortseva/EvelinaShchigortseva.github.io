@@ -25,7 +25,7 @@ function catchError(city){
 function setNow(city) {
     UI_ELEMENTS.degree.textContent = `${parseInt(city.main.temp)}°C`
     UI_ELEMENTS.cityName.textContent = `${city.name}`
-    let iconUrl = `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
+    let iconUrl = `https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
     UI_ELEMENTS.imageNow.style.background = `url(${iconUrl}) 50% 50% no-repeat`
     let flag = addCity(cityName)
     if(flag){
@@ -66,7 +66,7 @@ function showListCities(event){
 }
 
 function fetchQuery(cityName){
-    const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+    const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
     const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
     const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
 
