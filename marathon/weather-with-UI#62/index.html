@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <main class="main">
+        <form action="" class="form">
+            <input class="form-input" placeholder="City">
+            <input type="submit" class="form-button" value="">
+        </form>
+        <div class="information">
+            <div class="information-weather">
+                <div class="weather-block tabs-block" id="now">
+                    <div class="weather_now_temp" id="degree"><span>...</span></div>
+                    <div class="weather_now_img"></div>
+                    <div class="weather-now-city">
+                        <div class="city_text" id="cityName"></div>
+                        <button class="city_favorite" id="favorite-city"></button>
+                    </div>
+
+                </div>
+                <div class="weather-block tabs-block" id="details">
+                    
+                </div>
+                <div class="weather-block tabs-block" id="forecast">
+                    
+                </div>
+                <div class="tabs">
+                    <nav class="tabs_items">
+                        <a href="#now" class="tabs_item">Now</a>
+                        <a href="#details" class="tabs_item">Details</a>
+                        <a href="#forecast" class="tabs_item">Forecast</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="favotite-cities">
+                <div class="favorite-cities-heading">Added Locations:</div>
+                <div class="favorite-cities-list"></div>
+            </div>
+        </div>
+    </main>
+    <script type= "module" src="script/script.js"></script>
+</body>
+
+</html>
