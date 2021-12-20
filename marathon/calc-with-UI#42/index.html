@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <section class="input">
+                <div class="input-screen">
+                    <span class="input-text">
+
+                    </span>
+                </div>
+            </section>
+            <section class="keyboard">
+                <div class="keyboard-column">
+                    <div class="keyboard-row grey">
+                        <input type="button" value="C" class="keyboard-item twoitem" id="clear"></input>
+                        <input type="button" value="back" class="keyboard-item" id="back"></input>
+                        <input type="button" value="÷" data-operation="div" class="keyboard-item operation"></input>
+                    </div>
+                    <div class="keyboard-row">
+                        <input type="button" value="7" class="keyboard-item number"></input>
+                        <input type="button" value="8" class="keyboard-item number"></input>
+                        <input type="button" value="9" class="keyboard-item number"></input>
+                        <input type="button" value="x" data-operation="multi" class="keyboard-item operation"></input>
+                    </div>
+                    <div class="keyboard-row">
+                        <input type="button" value="4" class="keyboard-item number"></input>
+                        <input type="button" value="5" class="keyboard-item number"></input>
+                        <input type="button" value="6" class="keyboard-item number"></input>
+                        <input type="button" value="-" data-operation="sub" class="keyboard-item operation"></input>
+                    </div>
+                    <div class="keyboard-row">
+                        <input type="button" value="1" class="keyboard-item number"></input>
+                        <input type="button" value="2" class="keyboard-item number"></input>
+                        <input type="button" value="3" class="keyboard-item number"></input>
+                        <input type="button" value="+" data-operation="add" class="keyboard-item operation"></input>
+                    </div>
+                    <div class="keyboard-row">
+                        <input type="button" value="0" class="keyboard-item threeitem number"></input>
+                        <input type="button" value="=" class="keyboard-item" id="submit"></input>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

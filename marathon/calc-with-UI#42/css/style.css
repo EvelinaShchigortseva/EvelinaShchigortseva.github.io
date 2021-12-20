@@ -1,0 +1,102 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+.main {
+    width: 364px;
+    height: 582px;
+    background-color: #17171C;
+}
+
+.container {
+    width: 324px;
+    padding-top: 21px;
+    margin: 0 auto;
+}
+
+.input {}
+
+.input-screen {
+    height: 96px;
+    text-align: right;
+    margin: 10px;
+}
+
+.input-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 96px;
+    line-height: 96px;
+    color: #FFFFFF;
+}
+
+.keyboard {}
+
+.keyboard-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.keyboard-row {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+
+}
+
+.keyboard-item {
+    /* width: 69px; */
+    height: 72px;
+    /* margin-right: 16px; */
+    flex-basis: 69px;
+    border-radius: 24px;
+    background-color:#2E2F38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+    
+} 
+
+.keyboard-item:last-child {
+    background-color: #4b5efc;
+}
+
+.text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.twoitem {
+    flex-basis: 153px;
+    background-color: #4E505F;
+}
+
+.threeitem {
+    flex-basis: 238px;
+}
+
+.keyboard-item:active {
+    background-color: #17171C;
+}
