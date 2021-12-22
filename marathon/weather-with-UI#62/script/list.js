@@ -1,16 +1,17 @@
-let list = []
+let list = [];
 
-function  addCity(cityName){
-    if(!list.includes(cityName)){
-        list.push(cityName)
-        return true
-}
-    else {return false}
+function isCity(cityName) {
+  return list.includes(cityName);
 }
 
-function deleteCity(cityName){
-    list = list.filter(item => item !== cityName);
+function addCity(cityName) {
+  if (!isCity(cityName)) {
+    list.push(cityName);
+  }
 }
 
+function deleteCity(cityName) {
+  list = list.filter((item) => item !== cityName);
+}
 
-export { addCity, deleteCity};
+export { list, addCity, deleteCity, isCity };
