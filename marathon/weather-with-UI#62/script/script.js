@@ -20,10 +20,10 @@ let isFavorite;
 function colorFavorite(cityName) {
   if (cityName) {
     UI_ELEMENTS.favoriteCity.style.background =
-      'url("../img/like-red.svg") no-repeat';
+      'url("img/like-red.svg") no-repeat';
   } else {
     UI_ELEMENTS.favoriteCity.style.background =
-      'url("../img/like.svg") no-repeat';
+      'url("img/like.svg") no-repeat';
   }
 }
 
