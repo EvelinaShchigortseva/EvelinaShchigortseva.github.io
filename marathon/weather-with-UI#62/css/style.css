@@ -55,7 +55,7 @@ body {
   height: 22px;
   font-size: 0;
   cursor: pointer;
-  background: url("img/search.svg") no-repeat;
+  background: url("../img/search.svg") no-repeat;
 }
 
 .information {
@@ -85,7 +85,7 @@ body {
 }
 
 .weather_now_img {
-  background: url("img/cloud.svg") 50% 50% no-repeat;
+  background: url("../img/cloud.svg") 50% 50% no-repeat;
   height: 33%;
 }
 .weather-now-city {
@@ -164,7 +164,7 @@ body {
   padding-left: 20px;
 }
 .city_favorite {
-  background: url("img/like.svg") no-repeat;
+  background: url("../img/like.svg") no-repeat;
   width: 24px;
   height: 24px;
 }
@@ -230,5 +230,5 @@ body {
   top: 5px;
   height: 20px;
   width: 20px;
-  background: url("img/close-icon.svg") no-repeat;
+  background: url("../img/close-icon.svg") no-repeat;
 }
