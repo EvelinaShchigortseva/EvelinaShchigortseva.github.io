@@ -20,10 +20,10 @@ let isFavorite;
 function colorFavorite(cityName) {
   if (cityName) {
     UI_ELEMENTS.favoriteCity.style.background =
-      'url("img/like-red.svg") no-repeat';
+      'url("../img/like-red.svg") no-repeat';
   } else {
     UI_ELEMENTS.favoriteCity.style.background =
-      'url("img/like.svg") no-repeat';
+      'url("../img/like.svg") no-repeat';
   }
 }
 
@@ -48,7 +48,7 @@ function setNow(city) {
   let cityName = city.name;
   UI_ELEMENTS.degree.textContent = `${parseInt(city.main.temp)}°C`;
   UI_ELEMENTS.cityName[0].textContent = cityName;
-  let iconUrl = `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`;
+  let iconUrl = `https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`;
   UI_ELEMENTS.imageNow.style.background = `url(${iconUrl}) 50% 50% no-repeat`;
   isFavorite = isCity(cityName);
   colorFavorite(isFavorite);
@@ -95,7 +95,7 @@ function showListCities(event) {
 }
 //rename
 function fetchQuery(cityName) {
-  const serverUrl = "http://api.openweathermap.org/data/2.5/weather";
+  const serverUrl = "https://api.openweathermap.org/data/2.5/weather";
   const apiKey = "f660a2fb1e4bad108d6160b7f58c555f";
   const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
 
