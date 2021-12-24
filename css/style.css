@@ -1,65 +1,62 @@
-/*Обнуление*/
-*{padding: 0;margin: 0;border: 0;}
-*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
-nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
- input,button,textarea{font-family:inherit;}
- input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner{padding:0;border:0;}
-a,a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
-/*--------------------*/
-.header{}
-.main{
-    
-}
-.container{
-    margin: 0 auto;
-    width: 800px;
-}
-.project{
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
-}
-.project_column{
-    display: flex;
-}
-.project_item{
-    margin-left: 10px;
-    padding-top: 10px;
-   
-    border: 1px #000000 solid;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-.height{
-    width: 225px;
-    height: 330px;
+* {
+  box-sizing: border-box;
 }
 
-.item_link{
-    margin-bottom: 5px;
-
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background: rgb(19, 19, 19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
 }
-
-.item_img_height{
-width: 180px;
-height: 280px;
+header {
+  padding: 30px;
+  height: 200px;
+  font-size: 40px;
 }
-
-.item_img_width{
-    width: 400px;
+.main {
+  height: 500px;
 }
-.item_text{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
+.container {
+  width: 600px;
+  display: flex;
+  padding: 0 20px;
+}
+.slide {
+  height: 300px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+  flex: 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+.slide h3 {
+  position: absolute;
+  font-size: 24px;
+  bottom: -50px;
+  left: 50%;
+  margin: 0;
+  opacity: 0;
+}
+.slide.active {
+  flex: 3;
+}
+.slide.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
