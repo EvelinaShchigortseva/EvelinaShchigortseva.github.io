@@ -14,10 +14,10 @@ function setNow(city) {
 }
 function colorFavorite(cityName){
     if(cityName){
-        UI_ELEMENTS.favoriteCity.style.background = 'url("../img/like-red.svg") no-repeat'
+        UI_ELEMENTS.favoriteCity.style.background = 'url("img/like-red.svg") no-repeat'
     }
     else{
-        UI_ELEMENTS.favoriteCity.style.background = 'url("../img/like.svg") no-repeat'
+        UI_ELEMENTS.favoriteCity.style.background = 'url("img/like.svg") no-repeat'
     }
 }
 
