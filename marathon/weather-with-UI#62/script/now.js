@@ -5,7 +5,7 @@ import {UI_ELEMENTS} from './script.js'
 function setNow(city) {
     let isFavorite
     let cityName = city.name
-    let iconUrl = `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
+    let iconUrl = `https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`
     UI_ELEMENTS.degree.textContent = `${parseInt(city.main.temp)}°C`
     UI_ELEMENTS.cityName[0].textContent = cityName
     UI_ELEMENTS.imageNow.style.background = `url(${iconUrl}) 50% 50% no-repeat`

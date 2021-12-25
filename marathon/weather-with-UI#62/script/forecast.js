@@ -3,7 +3,7 @@ import {UI_ELEMENTS} from "./script.js";
 async function setForecast(city) {
 
     let cityName = city.name;
-    const serverUrl = 'http://api.openweathermap.org/data/2.5/forecast';
+    const serverUrl = 'https://api.openweathermap.org/data/2.5/forecast';
     const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
     const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`
 
@@ -76,7 +76,7 @@ function createItems (arrayInformation){
         weather.textContent = arrayItem.weather
         const weather_img = document.createElement('img')
         weather_img.classList.add('item-weather-img')
-        weather_img.src = `http://openweathermap.org/img/wn/${arrayItem.weather_img}@2x.png`
+        weather_img.src = `https://openweathermap.org/img/wn/${arrayItem.weather_img}@2x.png`
 
         itemTempWeather.prepend(weather,weather_img)
 
